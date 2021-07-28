@@ -1,0 +1,31 @@
+{
+  "webSettings": {
+    "elementWaitTimeout": "5",
+    "browserMode": "incognito",
+    "chrome": {
+      "pageLoadTimeout": "20",
+      "scriptTimeout": "3",
+      "implicitWait": "5"
+    },
+    "firefox": {
+      "pageLoadTimeout": "20",
+      "scriptTimeout": "3",
+      "implicitWait": "5"
+    }
+  },
+  "urlSettings": {
+    "mentorMate": "http://www.musala.com/"
+  },
+  "contactUsFormData": {
+    "name": "John Doe",
+    "subject": "This is a test",
+    "message": "This is a test message.",
+    "invalidEmails": [
+      "invalid@email",
+      "@email",
+      "invalid@email.",
+      "invalidemail.com",
+      "invalid@"
+    ]
+  }
+}

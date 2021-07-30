@@ -22,5 +22,8 @@
             this.Map.Message.Clear();
             this.Map.Message.SendKeys(ConfigurationService.Instance.GetContactUsFormData().Message);
         }
+
+        public void ClickSend()
+            => this.Map.SendButton.Click();
     }
 }

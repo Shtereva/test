@@ -7,7 +7,7 @@ namespace MentorMate
     public class Tests : BaseTest
     {
         [Test]
-        [Repeat(5)]
+        [TestCase()]
         public void SubmittingContactUsFormWithInvalidEmailShouldReturnErrorMessage()
         {
             // Arrange
@@ -17,9 +17,11 @@ namespace MentorMate
             pages.ContactUsObject.Navigate();
             pages.ContactUsObject.ClickContactUs();
             pages.ContactUsObject.FillOutContactUsForm();
+            pages.ContactUsObject.ClickSend();
             
 
             // Assert
+            pages.ContactUsObject.Validate().ErrorMessageIsDisplayed();
         }
     }
 }

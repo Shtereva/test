@@ -21,6 +21,12 @@
             => this.Browser.FindElement(By.Id("cf-5"));
 
         public IWebElement SendButton
-            => this.Message.FindElement(By.ClassName("btn-cf-submit"));
+            => this.Browser.FindElement(By.ClassName("btn-cf-submit"));
+
+        public IWebElement ErrorElement
+            => this.BrowserWait.Until(e => e.FindElement(By.ClassName("wpcf7-not-valid-tip")));
+
+        public bool ErrorText
+            => this.BrowserWait.Until(e => e.PageSource.Contains("The e-mail address entered is invalid."));
     }
 }

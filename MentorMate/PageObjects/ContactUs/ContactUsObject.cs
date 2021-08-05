@@ -8,13 +8,13 @@
         public void ClickContactUs()
             => this.Map.ContactUsElement.Click();
 
-        public void FillOutContactUsForm()
+        public void FillOutContactUsForm(int index)
         {
             this.Map.Name.Clear();
             this.Map.Name.SendKeys(ConfigurationService.Instance.GetContactUsFormData().Name);
 
             this.Map.Email.Clear();
-            this.Map.Email.SendKeys(ConfigurationService.Instance.GetContactUsFormData().InvalidEmails[0]);
+            this.Map.Email.SendKeys(ConfigurationService.Instance.GetContactUsFormData().InvalidEmails[index]);
 
             this.Map.Subject.Clear();
             this.Map.Subject.SendKeys(ConfigurationService.Instance.GetContactUsFormData().Subject);

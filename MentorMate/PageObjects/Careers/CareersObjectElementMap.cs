@@ -39,5 +39,25 @@
             => this.Browser.FindElements(By.ClassName("requirements"))
                 .First(e => e.FindElement(By.TagName("h2")).Text == "What we offer");
 
+        public IWebElement ApplyButton
+            => this.BrowserWait.Until(e => e.FindElement(By.ClassName("btn-join-us")));
+
+        public IWebElement NameField
+            => this.Browser.FindElement(By.Id("cf-1"));
+
+        public IWebElement EmailField
+            => this.Browser.FindElement(By.Id("cf-2"));
+
+        public IWebElement MobileField
+            => this.Browser.FindElement(By.Id("cf-3"));
+
+        public IWebElement SendButton
+            => this.Browser.FindElement(By.ClassName("btn-cf-submit"));
+
+        public bool ErrorMessages
+            => this.Browser.PageSource.Contains("The field is required.")
+               && this.Browser.PageSource.Contains("The e-mail address entered is invalid.")
+               && this.Browser.PageSource.Contains("The telephone number is invalid.");
+
     }
 }

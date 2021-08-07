@@ -15,5 +15,11 @@
             Assert.That(this.Map.ResponsibilitiesElement.Displayed);
             Assert.That(this.Map.WhatWeOfferElement.Displayed);
         }
+
+        public void ApplyButtonIsDisplayed()
+            => Assert.That(this.Map.ApplyButton.Displayed);
+
+        public void ErrorMessagesAreShown()
+            => Assert.That(this.Map.ErrorMessages, Is.True);
     }
 }

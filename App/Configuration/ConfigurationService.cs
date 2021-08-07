@@ -51,6 +51,16 @@ namespace App.Configuration
             return result ?? throw new ConfigurationNotFoundException(typeof(ContactUsFormData).ToString());
         }
 
+        public JobApplyForm GetJobApplyForm()
+        {
+            var result = Instance
+                .Root
+                .GetSection("jobApplyForm")
+                .Get<JobApplyForm>();
+
+            return result ?? throw new ConfigurationNotFoundException(typeof(JobApplyForm).ToString());
+        }
+
         private IConfigurationRoot InitializeConfiguration()
         {
             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

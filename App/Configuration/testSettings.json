@@ -27,5 +27,9 @@
       "invalidemail.com",
       "invalid@"
     ]
-  }
+  },
+  "jobApplyForm": {
+    "name": "",
+    "mobile": "0000000000"
+  } 
 }

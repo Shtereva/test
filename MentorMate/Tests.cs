@@ -87,7 +87,7 @@ namespace MentorMate
         }
 
         [Test]
-        public void FourMainSectionOfThePositionShouldBeDisplayed()
+        public void FourMainSectionOfThePositionAndApplyButtonShouldBeDisplayed()
         {
             // Arrange
             var pages = PageFactory.Create<PagesContainer>();
@@ -101,6 +101,27 @@ namespace MentorMate
 
             // Assert
             pages.Careers.Validate().SectionsAreDisplayed();
+            pages.Careers.Validate().ApplyButtonIsDisplayed();
+        }
+
+        [Test]
+        public void ApplyFormWithNegativeDataShouldReturnErrorMessage()
+        {
+            // Arrange
+            var pages = PageFactory.Create<PagesContainer>();
+
+            // Act
+            pages.Careers.Navigate();
+            pages.Careers.NavigateToCareersPage();
+            pages.Careers.ClickOpenPositions();
+            pages.Careers.SelectLocation();
+            pages.Careers.ChoosePosition();
+            pages.Careers.ClickApply();
+            pages.Careers.FillOutApplyForm();
+            pages.Careers.ClickSend();
+
+            // Assert
+            pages.Careers.Validate().ErrorMessagesAreShown();
         }
     }
 }

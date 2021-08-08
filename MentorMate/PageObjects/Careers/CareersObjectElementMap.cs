@@ -1,5 +1,6 @@
 ﻿namespace MentorMate.PageObjects.Careers
 {
+    using System.Collections.Generic;
     using System.Linq;
     using App.Base;
     using OpenQA.Selenium;
@@ -59,5 +60,13 @@
                && this.Browser.PageSource.Contains("The e-mail address entered is invalid.")
                && this.Browser.PageSource.Contains("The telephone number is invalid.");
 
+        public IWebElement UploadFileElement
+            => this.Browser.FindElement(By.Id("uploadtextfield"));
+
+        public List<IWebElement> PositionsByCity
+            => this.Browser.FindElements(By.ClassName("card-jobsHot"))
+                .Where(
+                    e => e.FindElement(By.ClassName("card-jobsHot__location")).Text.Contains("Sofia"))
+                .ToList();
     }
 }

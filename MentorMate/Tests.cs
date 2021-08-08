@@ -96,7 +96,7 @@ namespace MentorMate
             pages.Careers.Navigate();
             pages.Careers.NavigateToCareersPage();
             pages.Careers.ClickOpenPositions();
-            pages.Careers.SelectLocation();
+            pages.Careers.SelectLocation(("Anywhere"));
             pages.Careers.ChoosePosition();
 
             // Assert
@@ -114,7 +114,7 @@ namespace MentorMate
             pages.Careers.Navigate();
             pages.Careers.NavigateToCareersPage();
             pages.Careers.ClickOpenPositions();
-            pages.Careers.SelectLocation();
+            pages.Careers.SelectLocation("Anywhere");
             pages.Careers.ChoosePosition();
             pages.Careers.ClickApply();
             pages.Careers.FillOutApplyForm();
@@ -122,6 +122,23 @@ namespace MentorMate
 
             // Assert
             pages.Careers.Validate().ErrorMessagesAreShown();
+        }
+
+        [Test]
+        public void PrintAvailablePositionsByCity()
+        {
+            // Arrange
+            var pages = PageFactory.Create<PagesContainer>();
+
+            // Act
+            pages.Careers.Navigate();
+            pages.Careers.NavigateToCareersPage();
+            pages.Careers.ClickOpenPositions();
+            pages.Careers.SelectLocation("Sofia");
+            pages.Careers.Print();
+
+            // Assert
+            
         }
     }
 }

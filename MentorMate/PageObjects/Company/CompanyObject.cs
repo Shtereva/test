@@ -1,7 +1,5 @@
-﻿namespace MentorMate.PageObjects.Company
+﻿namespace MusalaSoft.PageObjects.Company
 {
-    using System;
-    using System.Linq;
     using App.Base;
 
     public class CompanyObject : BasePage<CompanyObjectElementMap, CompanyObjectValidator>

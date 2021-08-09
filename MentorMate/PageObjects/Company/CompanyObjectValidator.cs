@@ -1,4 +1,4 @@
-﻿namespace MentorMate.PageObjects.Company
+﻿namespace MusalaSoft.PageObjects.Company
 {
     using App.Base;
     using NUnit.Framework;

@@ -1,4 +1,4 @@
-﻿namespace MentorMate.PageObjects.Careers
+﻿namespace MusalaSoft.PageObjects.Careers
 {
     using App.Base;
     using NUnit.Framework;

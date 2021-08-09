@@ -1,4 +1,4 @@
-﻿namespace MentorMate.PageObjects.Company
+﻿namespace MusalaSoft.PageObjects.Company
 {
     using System.Linq;
     using App.Base;

@@ -1,9 +1,10 @@
-namespace MentorMate
+namespace MusalaSoft
 {
     using App;
     using App.Base;
     using NUnit.Framework;
 
+    [Parallelizable]
     public class Tests : BaseTest
     {
         [Test]
@@ -12,6 +13,7 @@ namespace MentorMate
         [TestCase(2)]
         [TestCase(3)]
         [TestCase(4)]
+        [Order(1)]
         public void SubmittingContactUsFormWithInvalidEmailShouldReturnErrorMessage(int index)
         {
             // Arrange
@@ -28,6 +30,7 @@ namespace MentorMate
         }
 
         [Test]
+        [Order(2)]
         public void CompanyPageUrlShouldBeCorrect()
         {
             // Arrange
@@ -42,6 +45,7 @@ namespace MentorMate
         }
 
         [Test]
+        [Order(3)]
         public void LeadershipSectionShouldBeVisible()
         {
             // Arrange
@@ -52,10 +56,11 @@ namespace MentorMate
             pages.Company.NavigateToCompanyPage();
 
             // Assert
-            pages.Company.Validate().CorrectUrlIsLoaded();
+            pages.Company.Validate().LeaderShipSectionIsDisplayed();
         }
 
         [Test]
+        [Order(4)]
         public void FaceBookUrlAndProfilePictureShouldBeCorrect()
         {
             // Arrange
@@ -72,6 +77,7 @@ namespace MentorMate
         }
 
         [Test]
+        [Order(5)]
         public void JoinUsPageUrlShouldBeCorrect()
         {
             // Arrange
@@ -87,6 +93,7 @@ namespace MentorMate
         }
 
         [Test]
+        [Order(6)]
         public void FourMainSectionOfThePositionAndApplyButtonShouldBeDisplayed()
         {
             // Arrange
@@ -105,6 +112,7 @@ namespace MentorMate
         }
 
         [Test]
+        [Order(7)]
         public void ApplyFormWithNegativeDataShouldReturnErrorMessage()
         {
             // Arrange
@@ -125,6 +133,7 @@ namespace MentorMate
         }
 
         [Test]
+        [Order(8)]
         public void PrintAvailablePositionsByCity()
         {
             // Arrange

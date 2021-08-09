@@ -1,4 +1,4 @@
-﻿namespace MentorMate.PageObjects.ContactUs
+﻿namespace MusalaSoft.PageObjects.ContactUs
 {
     using App.Base;
     using App.Configuration;
